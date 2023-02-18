@@ -1,38 +1,235 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Lexend+Deca:wght@100;200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+      --main-color: #20b5bb;
+      --text-color: rgb(0, 39, 42);
+      --text-color-2: rgb(83, 83, 83);
+      --text-white: whitesmoke;
+      --text-white-2: rgb(190, 190, 190);
+      --secondary-color: #f2ba5e;
+      --auxiliary-color: #0d465c;
+      --auxiliary-color-2: #ff898f;
+      --bg-black-color: rgb(0, 8, 9);
+}
+body{
+     font-family: "Lexend Deca";
+     background: rgb(249, 255, 255);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul{
+    list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+     text-decoration:  none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
 }
 
-.App-link {
-  color: #61dafb;
+.inner-row{
+     width: 90%;
+     margin: auto;
+}
+.spacer{
+     background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Header Styles */
+header{
+      height: 85px;
+      position: relative;
+}
+header.scrolled{
+      background: white;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      transform: translateY(-100%);
+      transition: all 0.7s ease;
+      z-index: 98;
+      box-shadow: 0px 1px 2px -1px gainsboro;
+}
+header.scrolled.active{
+      transform: translateY(0);
+}
+.header-content{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      border-bottom: 1px solid gainsboro;
+      position: relative;
+}
+header.scrolled.active .header-content{
+      border: none;
+}
+header .logo,
+.sidebar-content .logo a{
+     width: 160px;
+}
+
+.header-content nav{
+     display: flex;
+     align-items: center;
+     gap: 100px;
+}
+.header-content nav ul {
+     gap: 40px;
+     display: flex;
+     align-items: center;
+     z-index: 90;
+}
+.header-content nav ul li a,
+.sidebar-content nav ul li a{
+     font-weight: 300;
+     color: var(--text-color);
+     position: relative;
+}
+.header-content nav ul li a:hover,
+.header-content nav ul li a.active,
+.sidebar-content nav ul li a:hover,
+.sidebar-content nav ul li a.active{
+     color: var(--main-color);
+}
+.header-content nav ul li a::after,
+.sidebar-content nav ul li a:after{
+      content: "";
+      width:150%;
+      height: 40px;
+      background:rgba(205, 228, 235, 0.35);
+      position: absolute;
+      left: -25%;
+      top: -45%;
+      border-radius: 6px;
+      opacity: 0;
+      transition: all 0.6s ease;
+}
+
+.header-content nav ul li a.active::after,
+.header-content nav ul li a:hover::after,
+.sidebar-content nav ul li a.active::after,
+.sidebar-content nav ul li a:hover::after{
+     opacity: 1;
+}
+
+.header-content .call-to-action a,
+.sidebar-content .call-to-action a{
+      width: 150px;
+      height: 45px;
+      background: var(--main-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-weight: 300;
+      font-size: 15px;
+      color: white;
+      gap: 5px;
+}
+.header-content .call-to-action a span,
+.sidebar-content .call-to-action a span{
+      display: flex;
+}
+.header-content .mobile-menu-trigger{
+     position: absolute;
+     right: 0;
+     z-index: 99;
+     cursor: pointer;
+     width: 40px;
+     height: 40px;
+     display: none;
+     border-radius: 6px;
+     justify-content: center;
+     align-items: center;
+     background: var(--main-color);
+}
+.mobile-menu-trigger span{
+     color: white;
+     font-size: 22px;
+     display: flex;
+}
+
+.sidebar-container{
+     position: fixed;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     z-index: -1;
+}
+.sidebar-container.active {
+      z-index: 1000;
+}
+.sidebar-overlay{
+     background:rgba(27, 170, 180, 0.9);
+     width: 100%;
+     height: 100%;
+     top: -100%;
+     left: 0;
+     right: 0;
+     position: absolute;
+}
+.sidebar-overlay.active{
+      z-index: 103;
+}
+.sidebar-content{
+     width: 500px;
+     height: 100%;
+     background-color: white;
+     position: absolute;
+     padding: 50px 10px;
+     transform: translateX(-100%);
+}
+.sidebar-content.active{
+      z-index: 300;
+}
+.sidebar-content .logo{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding-bottom: 15px;
+     border-bottom: 1px solid gainsboro;
+}
+
+.sidebar-content .logo span{
+      width: 40px;
+      height: 40px;
+      background: var(--main-color);
+      border-radius: 6px;
+      color: white;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+}
+.sidebar-content ul{
+     margin-top: 20px;
+}
+.sidebar-content ul li {
+     line-height: 50px;
+}
+@media(min-width: 1100px){
+     .sidebar-container{
+          display: none;
+          z-index: -1;
+     }
+}
+@media(max-width: 1100px){
+     .header-content .mobile-menu-trigger{
+          display: flex;
+     }
+      .header-content nav{
+            display: none;
+      }
 }
