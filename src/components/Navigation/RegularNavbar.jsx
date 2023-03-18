@@ -3,7 +3,7 @@ import logo from "../../assets/Logo.png"
 import { IoLogoWhatsapp } from "react-icons/io5"
 import { CgMenuRight } from "react-icons/cg"
 import { navContext } from './navcontext'
-
+import { NavLink } from 'react-router-dom'
 const RegularNavbar = () => {
   const [ sidebarStatus, setSidebarStatus] = useContext(navContext)
 
@@ -22,11 +22,11 @@ const RegularNavbar = () => {
                                  </div>
                                   <nav>
                                           <ul>
-                                                 <li><a href="s" className='active'>Home</a></li>
-                                                 <li><a href="s">About Us</a></li>
-                                                 <li><a href="s">Services</a></li>
-                                                 <li><a href="s">Blog</a></li>
-                                                 <li><a href="s">Contact Us</a></li>
+                                                 <li><NavLink to={"/"} activeclassname="active">Home</NavLink></li>
+                                                 <li><NavLink to={'/about-us/'} activeclassname="active">About Us</NavLink></li>
+                                                 <li><NavLink to={"/services/"} activeclassname="active">Services</NavLink></li>
+                                                 <li><NavLink to="/portfolio/" activeclassname="active">Portfolio</NavLink></li>
+                                                 <li><NavLink to="/contact-us/" activeclassname="active">Contact Us</NavLink></li>
                                           </ul>
 
                                           <div className="call-to-action">

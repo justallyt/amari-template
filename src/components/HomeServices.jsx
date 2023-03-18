@@ -5,17 +5,20 @@ import imgService3 from "../assets/home-service3.png"
 import growthImg from "../assets/growthImage.png"
 import simplestar from "../assets/star.png"
 import { HiOutlineArrowNarrowRight } from "react-icons/hi"
+import { useLocation, NavLink } from 'react-router-dom'
 const HomeServices = () => {
+   const locator = useLocation()
+  const url = locator.pathname.slice(1, locator.pathname.length -1)
   return (
-    <div className='home-services-section'>
+    <div className={ url === 'services' ? 'home-services-section pbn' : 'home-services-section'}>
             <div className="inner-row">
                     <div className="home-services-section-content">
                           <div className="simple-star">
                                 <img src={simplestar} alt="" />
                           </div>
                              <div className="home-services-intro">
-                                    <h2 data-aos='fade-down'>Make your marketing more effective</h2>
-                                    <p data-aos='fade-up'>Brands can acquire and retain new customers using solutions that span the entire customer journey.</p>
+                                    <h2 data-aos='fade-down'>We Create unique & efficient digital solutions</h2>
+                                    <p data-aos='fade-up'>Brands can acquire and retain new customers using solutions that span the entire customer journey. Read on to discover just how.</p>
                              </div>
 
                              <div className="home-services-content-row">
@@ -64,9 +67,9 @@ const HomeServices = () => {
                                     </div>
                              </div>
 
-                             <div className="home-service-growth">
+                             <div className={url === 'services' ? "home-service-growth hide" : "home-service-growth"}>
                                      <div className="home-service-growth-row">
-                                               <div className="growth-images-column">
+                                               <div className="growth-images-column" data-aos='fade-right'>
                                                      <img src={growthImg} alt="" />
                                                </div>
                                                <div className="growth-description-column">
@@ -75,7 +78,7 @@ const HomeServices = () => {
 
                                                                <p data-aos='fade-up'>In order to scale new customer acquisition and retention for e-commerce brands, we work across the entire customer journey.</p>
 
-                                                               <a href="s" data-aos='zoom-in' data-aos-delay='300'>View All Services</a>
+                                                               <NavLink to='/services/' data-aos='zoom-in' data-aos-delay='300'>View All Services</NavLink>
                                                      </div>
                                                </div>
                                      </div>

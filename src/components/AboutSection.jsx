@@ -5,6 +5,7 @@ import training from "../assets/analysis.png"
 import spinner from "../assets/Shap.png"
 import aboutImage from "../assets/about-img.png"
 import { HiArrowLongRight } from "react-icons/hi2"
+import { NavLink } from 'react-router-dom'
 const AboutSection = () => {
   return (
     <div className='about-section'>
@@ -51,7 +52,7 @@ const AboutSection = () => {
 
                            <div className="more-about-section">
                                   <div className="more-about-row">
-                                           <div className="more-about-picture-column">
+                                           <div className="more-about-picture-column" data-aos='fade-right'>
                                                    <img src={aboutImage} alt="" />
                                            </div>
                                            <div className="more-about-description-column">
@@ -60,7 +61,7 @@ const AboutSection = () => {
                                                                <p data-aos='fade-up'>We exist to help African businesses harness the power of the internet and scale; We enable businesses <span>lower costs</span>, <span>stay competitive</span> and <span>go global </span>  by guiding them to adopt winning e-commerce strategies.</p>
                                                                <p data-aos='fade-up' data-aos-delay="300" >We are on a mission to contribute to socio-economic transformation of the African Continent by leveraging the internet to grow businesses and create jobs.</p>
 
-                                                               <a href="s" data-aos='zoom-in' data-aos-delay='600'>Learn More <span><HiArrowLongRight /></span></a>
+                                                               <NavLink to="/about-us/" data-aos='zoom-in' data-aos-delay='600'>Learn More <span><HiArrowLongRight /></span></NavLink>
                                                      </div>
                                            </div>
                                   </div>

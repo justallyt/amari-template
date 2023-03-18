@@ -6,6 +6,9 @@ import AboutSection from '../components/AboutSection'
 import Spacer from '../components/Spacer'
 import HomeServices from '../components/HomeServices'
 import Benefits from '../components/Benefits'
+import Process from '../components/Process'
+import Partners from '../components/Partners'
+import Footer from '../components/Footer'
 const Home = () => {
   return (
     <>
@@ -17,6 +20,10 @@ const Home = () => {
           <AboutSection />
           <HomeServices />
           <Benefits />
+          <Spacer pad={'20px'} />
+         <Process />
+         <Partners />
+         <Footer />
     </>
   )
 }

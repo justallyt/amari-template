@@ -1,0 +1,104 @@
+.portfolio-section{
+      padding: 100px 0;
+}
+#portfolio-body{
+     background: linear-gradient(rgba(255,255,255,0.74), transparent) ,url("../assets/partnersbg.jpg") no-repeat;
+     background-size: cover;
+     background-position: top bottom;
+}
+.portfolio-section .inner-row{
+    width: 1200px;
+}
+.portfolio-intro{
+      width: 800px;
+      margin: auto;
+      text-align: center;
+}
+
+.portfolio-intro h1{
+    font-size: 56px;
+    font-family: "DM Sans";
+    line-height: 80px;
+}
+.portfolio-intro p{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 36px;
+}
+.portfolio-types-row{
+    margin-top: 60px;
+}
+.portfolio-switches ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+}
+.portfolio-switches ul li{
+    border: 2px solid;
+    padding: 15px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.portfolio-switches ul li.active{
+      background: var(--main-color);
+      color: white;
+}
+
+.portfolio-shift-container-row{
+      margin-top: 60px;
+}
+.portfolio-container-moja{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.portfolio-container-moja.hide{
+    display: none;
+}
+.portfolio-container-moja.all .portfolio-moja:nth-child(19),
+.portfolio-container-moja.all .portfolio-moja:nth-child(20),
+.portfolio-container-moja.all .portfolio-moja:nth-child(21),
+.portfolio-container-moja.all .portfolio-moja:nth-child(22)
+{
+      max-height: 500px;
+}
+.portfolio-container-moja.all .portfolio-moja:nth-child(19)  img,
+.portfolio-container-moja.all .portfolio-moja:nth-child(20) img,
+.portfolio-container-moja.all .portfolio-moja:nth-child(21) img,
+.portfolio-container-moja.all .portfolio-moja:nth-child(22) img,
+.portfolio-container-moja.socials img{
+      object-fit: contain;
+}
+
+
+@media(max-width: 1250px){
+    .portfolio-section{
+         overflow: hidden;
+    }
+    .portfolio-section .inner-row{
+          width: 90%;
+    }
+}
+
+@media(max-width: 1090px){
+    .portfolio-intro{
+          width: 90%
+    }
+}
+
+@media(max-width: 768px){
+      .portfolio-intro h1{
+           font-size: 40px;
+           line-height: 60px;
+      }
+      .portfolio-container-moja{
+            grid-template-columns: repeat(2,1fr);
+      }
+}
+
+@media(max-width: 500px){
+      .portfolio-container-moja{
+            grid-template-columns: repeat(1,1fr);
+      }
+}
